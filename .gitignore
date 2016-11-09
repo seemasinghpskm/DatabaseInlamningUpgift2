@@ -6,7 +6,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-
+*.opensdf
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -34,7 +34,7 @@ bld/
 # NUNIT
 *.VisualState.xml
 TestResult.xml
-
+*.jfm
 # Build Results of an ATL Project
 [Dd]ebugPS/
 [Rr]eleasePS/
@@ -165,7 +165,7 @@ csx/
 # Microsoft Azure Emulator
 ecf/
 rcf/
-
+DatabaseInlamningUpgift2/DatabaseSQLInlamningUpgift2/DatabaseSQLInlamningUpgift2.jfm
 # Microsoft Azure ApplicationInsights config file
 ApplicationInsights.config
 
