@@ -12,16 +12,10 @@ namespace DatabaseInlamningUpgift2
     {
         static void Main(string[] args)
         {
-
-
-
-           UpdateProductPrice();
-
+            UpdateProductPrice();
             UpdateContactNameCustomers();
             InsertCustomer();
             InsertProduct();
-
-
         }
         private static void UpdateContactNameCustomers()
         {
