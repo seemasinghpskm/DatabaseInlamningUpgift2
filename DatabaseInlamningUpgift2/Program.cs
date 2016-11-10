@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -19,8 +20,8 @@ namespace DatabaseInlamningUpgift2
         }
         private static void UpdateContactNameCustomers()
         {
-            string str = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NORTHWND;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            using (SqlConnection cn = new SqlConnection(str))
+            string str = ConfigurationManager.ConnectionStrings["NorthDb"].ConnectionString;
+                using (SqlConnection cn = new SqlConnection(str))
             {
 
 
@@ -31,7 +32,7 @@ namespace DatabaseInlamningUpgift2
                                     SET [ContactName] = @ContactName
                                     WHERE [CustomerID] = @CustomerID";
 
-                cmd.Parameters.AddWithValue("@ContactName", "Divya Bharati");
+                cmd.Parameters.AddWithValue("@ContactName", "Jaya Bhaduri");
                 cmd.Parameters.AddWithValue("@CustomerID", "ANATR");
                 cmd.ExecuteNonQuery();
                 cn.Close();
@@ -40,7 +41,7 @@ namespace DatabaseInlamningUpgift2
 
         private static void UpdateProductPrice()
         {
-            string str = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NORTHWND;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string str = ConfigurationManager.ConnectionStrings["NorthDb"].ConnectionString;
             using (SqlConnection cn = new SqlConnection(str))
             {
                 cn.Open();
@@ -58,7 +59,7 @@ namespace DatabaseInlamningUpgift2
 
         static void InsertCustomer()
         {
-            string str = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NORTHWND;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string str = ConfigurationManager.ConnectionStrings["NorthDb"].ConnectionString;
             SqlConnection cn = new SqlConnection(str);
             cn.Open();
             SqlCommand cmd = cn.CreateCommand();
@@ -83,7 +84,7 @@ namespace DatabaseInlamningUpgift2
 
         static void InsertProduct()
         {
-            string str = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=NORTHWND;Integrated Security=True;Connect Timeout=60;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string str = ConfigurationManager.ConnectionStrings["NorthDb"].ConnectionString;
             SqlConnection cn = new SqlConnection(str);
             cn.Open();
             SqlCommand cmd = cn.CreateCommand();
